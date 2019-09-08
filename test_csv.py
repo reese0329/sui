@@ -4,14 +4,21 @@ import xlrd
 from xlutils.copy import copy
 #创建Excel表格
 
-template = xlrd.open_workbook(r'C:\Users\Administrator\Desktop\sui\template.xls')
+pw = False
+
+if pw==True:
+    path = 'C://Users//Administrator//Desktop//sui'
+else:
+    path = 'D://data'
+
+template = xlrd.open_workbook(path+'/template.xls')
 sui = copy(template)
 spend = sui.get_sheet(0)
 income = sui.get_sheet(1)
 trans = sui.get_sheet(2)
 # print(sui.sheet_names())
 
-df = open('C:/Users/Administrator/Desktop/sui/alipay_record.csv',encoding='gbk')
+df = open(path+'//alipay_record.csv',encoding='gbk')
 read_line = csv.reader(df)
 spend_i = 3
 income_i = 2
@@ -34,12 +41,12 @@ def find(n,spend_i):
 
 
 for i in read_line:
-    # print(i)
+    print(i)
     if m<=6:
         pass
     else:
-        # print(i[10])
-    # #time
+        print(i[10])
+    #time
         if '交易关闭' in i[11]:
             pass
         else:
@@ -52,6 +59,7 @@ for i in read_line:
                 spend.write(spend_i, 0, i[10])
                 spend_i += 1
             elif '收入' in i[10]:
+
                 income.write(income_i, 1, i[4].replace('/','-'))
                 income.write(income_i, 6, float(i[9]))
                 income.write(income_i, 8, i[7])
@@ -60,7 +68,7 @@ for i in read_line:
             else:
                 trans.write(trans_i, 1, i[4].replace('/', '-'))
                 trans.write(trans_i, 6, float(i[9]))
-                print(float(i[9]))
+                print(type(i[9]))
                 trans.write(trans_i, 8, i[7])
                 trans.write(trans_i, 0, i[10])
                 trans_i += 1
@@ -69,5 +77,5 @@ for i in read_line:
 # # for i in range(8):
 # #     spend.write(i, 1, i)
 #
-sui.save(r'C:\Users\Administrator\Desktop\sui\template.xls')
+sui.save(path+'//template.xls')
 
