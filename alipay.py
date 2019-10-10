@@ -17,10 +17,10 @@ def read_excel():
     dict_play = {}
     for i in range(2, nrow):
         title = table.cell_value(i, 4)
-        #去除没有玩的条目，即玩为"/"
+        # 去除没有玩的条目，即玩为"/"
         if title == "/":
             pass
-        #已加入dic中的玩不再加入，去重避免修改
+        # 已加入dic中的玩不再加入，去重避免修改
         elif title in dict_play.keys():
             pass
         else:
@@ -30,9 +30,7 @@ def read_excel():
     print("玩dic：")
     print(dict_play)
 
-
-
-    #练测dic
+    # 练测dic
     table = workbook.sheets()[4]
     nrow = table.nrows
     # print(nrow)
@@ -47,8 +45,6 @@ def read_excel():
             # print(value)
     print("练测dic:")
     print(dict)
-
-
 
 
 if __name__ == '__main__':

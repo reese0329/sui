@@ -1,4 +1,5 @@
 import csv
+
 #
 #
 # # csv_file=csv.reader(open(r'C:\Users\Administrator\Desktop\sui\alipay_record_20190820_1545_1.csv','r'))
@@ -30,14 +31,12 @@ import csv
 #
 
 
-
 pw = False
 
-if pw==True:
+if pw == True:
     path = 'C://Users//Administrator//Desktop//sui'
 else:
     path = 'D://data'
-
 
 # template = xlrd.open_workbook(path + '/money.xls')
 # sui = copy(template)
@@ -46,7 +45,7 @@ else:
 # trans = sui.get_sheet(2)
 # # print(sui.sheet_names())
 
-df = open(path+'//微信支付账单.csv')
+df = open(path + '//微信支付账单.csv')
 read_line = csv.reader(df)
 for i in read_line:
     print(i)
