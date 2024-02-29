@@ -4,6 +4,7 @@ import xlrd
 import xlwt
 # 创建Excel表格
 from classify import find
+from classify import find_in
 from xlutils.copy import copy
 
 
@@ -30,22 +31,23 @@ trans_i = 1
 m = 0
 
 for i in read_line:
-    print(i)
+    print(m)
     if m <= 4:
         pass
+    elif '----' in i[0]:
+        break
     else:
         # print(i[8])
         # time
-        # if '交易关闭' in i[11]:
-        #     pass
-        # else:
+        if '交易关闭' in i[11]:
+            pass
+        else:
             if '支出' in i[10]:
                 # date
                 spend.write(spend_i, 9, str(i[2].replace('/', '-')))
                 # sum
                 spend.write(spend_i, 5, float(i[9]))
                 find(i[7], spend_i, spend)
-                print(i[7])
                 spend.write(spend_i, 7, i[7].replace(' ', ''))
                 spend.write(spend_i, 8, i[8].replace(' ', ''))
                 spend.write(spend_i, 0, i[10].replace(' ', ''))
@@ -60,7 +62,8 @@ for i in read_line:
                     income.write(income_i, 8, i[8].replace(' ', ''))
                     income.write(income_i, 0, i[10].replace(' ', ''))
                     income.write(income_i, 3, '支付宝')
-                    # print(i[8])
+                    find_in(i[7], income_i, income)
+                    print(i[7])
                     income_i += 1
                 else:
                     # date
@@ -68,7 +71,7 @@ for i in read_line:
                     # sum
                     spend.write(spend_i, 5, -float(i[9]))
                     find(i[7], spend_i, spend)
-                    # print(i[8])
+                    # print(i[7])
                     spend.write(spend_i, 7, i[7].replace(' ', ''))
                     spend.write(spend_i, 8, i[8].replace(' ', ''))
                     spend.write(spend_i, 0, '支出')
@@ -76,12 +79,13 @@ for i in read_line:
                     spend.write(spend_i, 3, '支付宝')
                     spend_i += 1
             else:
-                trans.write(trans_i, 1, i[2].replace('/', '-'))
-                trans.write(trans_i, 6, i[9])
+                # trans.write(trans_i, 1, i[2].replace('/', '-'))
+                trans.write(trans_i, 5, i[9])
                 trans.write(trans_i, 3, '支付宝')
                 trans.write(trans_i, 9, i[4].replace('/', '-'))
                 # print(float(i[9]))
-                trans.write(trans_i, 8, i[7].replace(' ', ''))
+                trans.write(trans_i, 8, i[8].replace(' ', ''))
+                trans.write(trans_i, 7, i[7].replace(' ', ''))
                 trans.write(trans_i, 0, i[10].replace(' ', ''))
                 trans.write(trans_i, 4, '支付宝')
                 trans_i += 1

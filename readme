@@ -1,0 +1,11 @@
+alipay
+1.修改账单名为alipay_record.csv
+2.执行sui_alipay.py
+3.结果在pay_alipay 查看结果
+
+wx
+1.解压；重命名时删除日期
+2.修改金额列的单元格格式为文本格式
+3.保存时为csv格式
+4.执行sui_wx.py
+5.template_wx.xls  查看结果

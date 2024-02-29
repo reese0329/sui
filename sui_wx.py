@@ -4,6 +4,7 @@ import xlrd
 import xlwt
 # 创建Excel表格
 from classify import find
+from classify import find_in
 from xlutils.copy import copy
 
 pw = False
@@ -13,17 +14,17 @@ if pw == False:
 else:
     path = 'D://data'
 
-template = xlrd.open_workbook(path + '/template.xls')
+template = xlrd.open_workbook(path + '/new.xls')
 sui = copy(template)
 spend = sui.get_sheet(0)
 income = sui.get_sheet(1)
-trans = sui.get_sheet(2)
+trans = sui.get_sheet(3)
 # print(sui.sheet_names())
 
 # 金额转换为文本格式
 # 需要删除特殊的微信名
 
-df = open(path + '//微信支付账单.csv')
+df = open(path + '//wx.csv')
 read_line = csv.reader(df)
 spend_i = 1
 income_i = 1
@@ -31,11 +32,12 @@ trans_i = 1
 m = 0
 
 for i in read_line:
-    # print(i)
+    print(i)
     if m <= 16:
         pass
     else:
-        print(i[2])
+        print(i)
+        #print(i[2])
         if '支出' in i[4]:
             # date
             spend.write(spend_i, 9, str(i[0].replace('/', '-')))
@@ -63,26 +65,29 @@ for i in read_line:
             #     income_i += 1
             # else:
             #     # date
-            spend.write(spend_i, 9, str(i[0].replace('/', '-')))
+            income.write(income_i, 9, str(i[0].replace('/', '-')))
             # sum
-            spend.write(spend_i, 5, -float(i[5]))
-            find(i[2], spend_i, spend)
+            income.write(income_i, 5, float(i[5]))
+            find_in(i[2], income_i, income)
             print(i[2])
-            spend.write(spend_i, 0, '支出')
-            spend.write(spend_i, 7, i[2].replace(' ', ''))
-            spend.write(spend_i, 8, i[3].replace(' ', ''))
-            spend.write(spend_i, 10, i[10].replace(' ', ''))
-            spend.write(spend_i, 3, '零钱通')
-            spend_i += 1
+            income.write(income_i, 0, '收入')
+            income.write(income_i, 7, i[2].replace(' ', ''))
+            income.write(income_i, 8, i[3].replace(' ', ''))
+            income.write(income_i, 10, i[10].replace(' ', ''))
+            income.write(income_i, 3, '零钱通')
+            income_i += 1
         else:
-            trans.write(trans_i, 1, i[2].replace('/', '-'))
-            trans.write(trans_i, 6, i[9])
-            trans.write(trans_i, 3, '支付宝')
-            trans.write(trans_i, 9, i[4].replace('/', '-'))
-            # print(float(i[9]))
-            trans.write(trans_i, 8, i[7].replace(' ', ''))
+            # trans.write(trans_i, 1, i[2].replace('/', '-'))
             trans.write(trans_i, 0, '转账')
-            trans.write(trans_i, 4, '支付宝')
+            trans.write(trans_i, 3, i[6])
+            trans.write(trans_i, 4, '基金账户(CNY)')
+            trans.write(trans_i, 5, i[5])
+            trans.write(trans_i, 7, '理财通')
+            trans.write(trans_i, 8, i[1])
+            trans.write(trans_i, 9, str(i[0].replace('/', '-')))
+            trans.write(trans_i, 10, i[3])
+            # print(float(i[9]))
+
             trans_i += 1
     m += 1
 #
