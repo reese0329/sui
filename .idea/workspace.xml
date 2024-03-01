@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="603e75b0-7573-450f-a11a-3e8006aa6c33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/readme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sui.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classify.py" beforeDir="false" afterPath="$PROJECT_DIR$/classify.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sui_alipay.py" beforeDir="false" afterPath="$PROJECT_DIR$/sui_alipay.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sui_wx.py" beforeDir="false" afterPath="$PROJECT_DIR$/sui_wx.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -170,8 +164,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="212" />
-    <option name="y" value="154" />
+    <option name="x" value="215" />
+    <option name="y" value="79" />
     <option name="width" value="1233" />
     <option name="height" value="920" />
   </component>
@@ -187,26 +181,6 @@
             <path>
               <item name="sui" type="b2602c69:ProjectViewProjectNode" />
               <item name="sui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sui" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sui" type="462c0819:PsiDirectoryNode" />
-              <item name="alipay.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="sui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sui" type="462c0819:PsiDirectoryNode" />
-              <item name="classify.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="sui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sui" type="462c0819:PsiDirectoryNode" />
-              <item name="test_csv.py" type="8704e2dd:PyFileNode" />
             </path>
           </expand>
           <select />
@@ -394,15 +368,21 @@
       <option name="project" value="LOCAL" />
       <updated>1570695392209</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ver240229">
+      <created>1709197422582</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709197422582</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="22802000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="192" y="199" width="1233" height="920" extended-state="0" />
-    <editor active="true" />
+    <frame x="215" y="79" width="1233" height="920" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2167364" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -433,7 +413,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ver190910" />
     <MESSAGE value="ver191010" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver191010" />
+    <MESSAGE value="ver240229" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver240229" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
